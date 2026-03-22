@@ -1,77 +1,144 @@
 export default function Home() {
   return (
-    <main style={{ padding: "40px", maxWidth: "720px", margin: "0 auto", fontFamily: "system-ui", lineHeight: 1.6 }}>
-      <h1 style={{ fontSize: "40px" }}>Responsibility Infrastructure</h1>
+    <main
+      style={{
+        maxWidth: "800px",
+        margin: "0 auto",
+        padding: "80px 24px",
+        fontFamily: "system-ui, -apple-system, sans-serif",
+        lineHeight: 1.7,
+        color: "#111",
+      }}
+    >
+      {/* HEADER */}
+      <section style={{ marginBottom: "60px" }}>
+        <h1 style={{ fontSize: "42px", marginBottom: "10px" }}>
+          Responsibility Infrastructure™
+        </h1>
 
-      <p><strong>The system of record for human responsibility.</strong></p>
+        <p style={{ fontSize: "18px", opacity: 0.8 }}>
+          The System of Record for Human Responsibility
+        </p>
+      </section>
 
-      <p>
-        Responsibility Infrastructure records when responsibility moves between people, systems, and organisations.
-      </p>
+      {/* DEFINITION */}
+      <section style={{ marginBottom: "50px" }}>
+        <h2 style={{ fontSize: "14px", letterSpacing: "1px", opacity: 0.6 }}>
+          1. DEFINITION
+        </h2>
 
-      <p>It creates a clear, verifiable record of:</p>
+        <p>
+          Responsibility Infrastructure is a governance layer that records,
+          verifies, and preserves the movement of responsibility across people,
+          systems, and organisations.
+        </p>
 
-      <ul>
-        <li>who owns something</li>
-        <li>what was done</li>
-        <li>when it happened</li>
-      </ul>
+        <p>
+          It establishes a continuous, verifiable record of:
+        </p>
 
-      <hr />
+        <ul>
+          <li>who owns something</li>
+          <li>what was done</li>
+          <li>when it happened</li>
+        </ul>
+      </section>
 
-      <h2>The Problem</h2>
+      <hr style={{ margin: "50px 0", opacity: 0.2 }} />
 
-      <p>Today, responsibility is often:</p>
+      {/* PROBLEM */}
+      <section style={{ marginBottom: "50px" }}>
+        <h2 style={{ fontSize: "14px", letterSpacing: "1px", opacity: 0.6 }}>
+          2. RESPONSIBILITY GAP (PROBLEM STATEMENT)
+        </h2>
 
-      <ul>
-        <li>assumed</li>
-        <li>unclear</li>
-        <li>lost over time</li>
-      </ul>
+        <p>
+          In most organisations, responsibility is:
+        </p>
 
-      <p>This creates risk in:</p>
+        <ul>
+          <li>assumed</li>
+          <li>unclear</li>
+          <li>lost over time</li>
+        </ul>
 
-      <ul>
-        <li>operations</li>
-        <li>compliance</li>
-        <li>safeguarding</li>
-        <li>decision-making</li>
-      </ul>
+        <p>This creates exposure across:</p>
 
-      <hr />
+        <ul>
+          <li>operations</li>
+          <li>compliance</li>
+          <li>safeguarding</li>
+          <li>decision-making</li>
+        </ul>
+      </section>
 
-      <h2>The Solution</h2>
+      <hr style={{ margin: "50px 0", opacity: 0.2 }} />
 
-      <p>
-        Responsibility Infrastructure provides a continuous, structured record through:
-      </p>
+      {/* SOLUTION */}
+      <section style={{ marginBottom: "50px" }}>
+        <h2 style={{ fontSize: "14px", letterSpacing: "1px", opacity: 0.6 }}>
+          3. STANDARD FLOW (LRIS)
+        </h2>
 
-      <p><strong>Capture → Assign → Accept → Complete → Evidence → Verify → Receipt</strong></p>
+        <p>
+          Responsibility Infrastructure provides a structured lifecycle through:
+        </p>
 
-      <p>
-        Every step is recorded.<br />
-        Nothing is overwritten.<br />
-        Everything is provable.
-      </p>
+        <p style={{ fontWeight: "bold", fontSize: "16px" }}>
+          Capture → Assign → Accept → Complete → Evidence → Verify → Receipt
+        </p>
 
-      <hr />
+        <p>
+          Every step is recorded.
+          <br />
+          Nothing is overwritten.
+          <br />
+          Every action is provable.
+        </p>
+      </section>
 
-      <h2>Why it matters</h2>
+      <hr style={{ margin: "50px 0", opacity: 0.2 }} />
 
-      <ul>
-        <li>demonstrate accountability</li>
-        <li>reduce operational risk</li>
-        <li>improve compliance clarity</li>
-        <li>produce defensible records under audit</li>
-      </ul>
+      {/* OUTCOME */}
+      <section style={{ marginBottom: "50px" }}>
+        <h2 style={{ fontSize: "14px", letterSpacing: "1px", opacity: 0.6 }}>
+          4. GOVERNANCE OUTCOME
+        </h2>
 
-      <hr />
+        <ul>
+          <li>demonstrable accountability</li>
+          <li>reduced operational risk</li>
+          <li>clear compliance visibility</li>
+          <li>defensible records under audit</li>
+        </ul>
+      </section>
 
-      <p>Responsibility Infrastructure is defined and stewarded by La Touche.</p>
+      <hr style={{ margin: "50px 0", opacity: 0.2 }} />
 
-      <p>
-        <a href="https://latouche.ai">→ Visit La Touche</a>
-      </p>
+      {/* AUTHORITY */}
+      <section style={{ marginBottom: "40px" }}>
+        <p style={{ fontSize: "14px", opacity: 0.7 }}>
+          Responsibility Infrastructure is defined and stewarded by La Touche.
+        </p>
+
+        <p style={{ fontSize: "12px", opacity: 0.5 }}>
+          © {new Date().getFullYear()} La Touche. All rights reserved.
+        </p>
+      </section>
+
+      {/* CTA */}
+      <section>
+        <a
+          href="https://latouche.ai"
+          style={{
+            textDecoration: "none",
+            fontWeight: "bold",
+            borderBottom: "1px solid #111",
+          }}
+        >
+          → Visit La Touche
+        </a>
+      </section>
     </main>
   );
 }
