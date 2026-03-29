@@ -1,342 +1,187 @@
-export default function Home() {
+export default function ResponsibilityInfrastructureHomepage() {
   return (
-    <main
-      style={{
-        minHeight: "100vh",
-        background:
-          "radial-gradient(circle at top, #0f2740 0%, #09111d 28%, #05080f 62%, #030507 100%)",
-        color: "#f5f7fb",
-        fontFamily:
-          'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: "980px",
-          margin: "0 auto",
-          padding: "88px 28px 120px",
-        }}
-      >
-        {/* HERO */}
-        <section style={{ marginBottom: "88px" }}>
-          <div
-            style={{
-              display: "inline-block",
-              marginBottom: "22px",
-              padding: "8px 14px",
-              border: "1px solid rgba(255,255,255,0.12)",
-              borderRadius: "999px",
-              background: "rgba(255,255,255,0.04)",
-              fontSize: "12px",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.7)",
-            }}
-          >
-            Defined and stewarded by La Touche
-          </div>
-
-          <h1
-            style={{
-              margin: 0,
-              fontSize: "clamp(54px, 8vw, 96px)",
-              lineHeight: 0.95,
-              letterSpacing: "-0.05em",
-              fontWeight: 650,
-              maxWidth: "900px",
-              textShadow: "0 8px 40px rgba(0,0,0,0.35)",
-            }}
-          >
-            Responsibility
-            <br />
-            Infrastructure<span style={{ opacity: 0.8 }}>™</span>
-          </h1>
-
-          <p
-            style={{
-              marginTop: "28px",
-              marginBottom: "22px",
-              maxWidth: "760px",
-              fontSize: "clamp(22px, 2.6vw, 32px)",
-              lineHeight: 1.2,
-              letterSpacing: "-0.03em",
-              color: "rgba(255,255,255,0.92)",
-              fontWeight: 420,
-            }}
-          >
-            The system of record for human responsibility.
-          </p>
-
-          <p
-            style={{
-              maxWidth: "720px",
-              margin: 0,
-              fontSize: "18px",
-              lineHeight: 1.75,
-              color: "rgba(255,255,255,0.68)",
-            }}
-          >
-            A governance layer that records, verifies, and preserves the movement
-            of responsibility across people, systems, and organisations.
-          </p>
-        </section>
-
-        {/* DEFINITION BLOCK */}
-        <section
-          style={{
-            marginBottom: "32px",
-            padding: "32px",
-            borderRadius: "28px",
-            border: "1px solid rgba(255,255,255,0.08)",
-            background: "rgba(255,255,255,0.03)",
-            boxShadow: "0 20px 80px rgba(0,0,0,0.28)",
-            backdropFilter: "blur(8px)",
-          }}
-        >
-          <div
-            style={{
-              fontSize: "12px",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: "rgba(255,255,255,0.52)",
-              marginBottom: "18px",
-            }}
-          >
-            Core Definition
-          </div>
-
-          <p
-            style={{
-              margin: 0,
-              maxWidth: "760px",
-              fontSize: "28px",
-              lineHeight: 1.35,
-              letterSpacing: "-0.03em",
-              color: "rgba(255,255,255,0.96)",
-            }}
-          >
-            Responsibility Infrastructure establishes a continuous, verifiable
-            record of who owns something, what was done, and when it happened.
-          </p>
-        </section>
-
-        {/* 3 PILLARS */}
-        <section
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-            gap: "18px",
-            marginBottom: "92px",
-          }}
-        >
-          {[
-            ["Ownership", "Who holds the responsibility."],
-            ["Action", "What was actually done."],
-            ["Time", "When responsibility moved or was discharged."],
-          ].map(([title, text]) => (
-            <div
-              key={title}
-              style={{
-                padding: "26px 24px",
-                borderRadius: "22px",
-                border: "1px solid rgba(255,255,255,0.08)",
-                background: "rgba(255,255,255,0.025)",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: "13px",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  color: "rgba(255,255,255,0.5)",
-                  marginBottom: "12px",
-                }}
+    <main className="min-h-screen bg-white text-slate-900">
+      <section className="border-b border-slate-200">
+        <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+          <div className="max-w-3xl">
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Responsibility Infrastructure
+            </p>
+            <h1 className="text-4xl font-semibold leading-tight md:text-6xl">
+              The system that records how responsibility moves, is accepted, and is proven.
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+              Most organisations can show activity. Very few can clearly prove who owned a matter,
+              when ownership became real, what was done, what evidence exists, and who verified the
+              result. Responsibility Infrastructure closes that gap.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#what-it-is"
+                className="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-medium text-white shadow-sm transition hover:opacity-90"
               >
-                {title}
+                Learn more
+              </a>
+              <a
+                href="#why-it-matters"
+                className="rounded-2xl border border-slate-300 px-5 py-3 text-sm font-medium text-slate-700 transition hover:bg-slate-50"
+              >
+                Why it matters
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="what-it-is">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-20 md:grid-cols-2 md:gap-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              What it is
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+              A system of record for responsibility.
+            </h2>
+          </div>
+          <div className="space-y-6 text-base leading-8 text-slate-600">
+            <p>
+              Responsibility Infrastructure is not a task manager, a CRM, or a generic workflow tool.
+              It is the layer that makes responsibility visible, attributable, and defensible when the
+              pressure arrives.
+            </p>
+            <p>
+              It records the movement of responsibility between people, teams, and systems. That means
+              an organisation can understand not just what happened, but who owned what at each moment.
+            </p>
+            <p>
+              When something goes wrong, the question is rarely “what data do you have?” The real
+              question is “who was responsible, when did they accept it, what happened next, and can it
+              be proven?”
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50" id="why-it-matters">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Why it matters
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+              Activity is not the same as accountable truth.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {[
+              {
+                title: "Inspections",
+                body: "Regulators and reviewers need a clear account of ownership, action, and proof.",
+              },
+              {
+                title: "Incidents",
+                body: "When something breaks, fragments are not enough. The chain must be reconstructable.",
+              },
+              {
+                title: "Handover risk",
+                body: "Responsibility often gets lost between people, shifts, teams, and systems.",
+              },
+            ].map((item) => (
+              <div key={item.title} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{item.body}</p>
               </div>
-              <p
-                style={{
-                  margin: 0,
-                  fontSize: "20px",
-                  lineHeight: 1.45,
-                  letterSpacing: "-0.02em",
-                  color: "rgba(255,255,255,0.92)",
-                }}
-              >
-                {text}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+              Core idea
+            </p>
+            <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+              Clear responsibility. Clear proof. Clear record.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-4 md:grid-cols-4">
+            {[
+              "Capture",
+              "Responsibility",
+              "Proof",
+              "Receipt",
+            ].map((step, index) => (
+              <div key={step} className="rounded-3xl border border-slate-200 p-6">
+                <p className="text-sm text-slate-400">0{index + 1}</p>
+                <h3 className="mt-4 text-xl font-semibold">{step}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-slate-200 bg-slate-900 text-white">
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-2 md:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">
+                The shift
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+                From documenting activity to proving responsibility.
+              </h2>
+            </div>
+            <div className="space-y-5 text-base leading-8 text-slate-300">
+              <p>
+                Existing systems usually record notes, tasks, or events. Responsibility Infrastructure
+                records responsibility itself.
+              </p>
+              <p>
+                That makes it possible to produce a trusted account under pressure: who owned the matter,
+                when it moved, what was done, and whether the outcome was verified.
               </p>
             </div>
-          ))}
-        </section>
+          </div>
+        </div>
+      </section>
 
-        {/* SECTIONS */}
-        <Section
-          number="01"
-          title="Responsibility Gap"
-          text="In most organisations, responsibility is assumed, unclear, or lost over time. That creates exposure across operations, compliance, safeguarding, and decision-making."
-        />
-
-        <Section
-          number="02"
-          title="Standard Flow"
-          text="Responsibility Infrastructure provides a structured lifecycle through a sequence that can be recorded, evidenced, verified, and trusted under pressure."
-        >
-          <div
-            style={{
-              marginTop: "26px",
-              padding: "24px 26px",
-              borderRadius: "22px",
-              border: "1px solid rgba(88,167,255,0.22)",
-              background:
-                "linear-gradient(180deg, rgba(23,53,87,0.52) 0%, rgba(12,23,39,0.45) 100%)",
-              boxShadow: "inset 0 1px 0 rgba(255,255,255,0.04)",
-            }}
-          >
-            <div
-              style={{
-                fontSize: "clamp(22px, 3vw, 34px)",
-                lineHeight: 1.35,
-                letterSpacing: "-0.035em",
-                color: "#f7fbff",
-                fontWeight: 600,
-              }}
-            >
-              Capture → Assign → Accept → Complete → Evidence → Verify → Receipt
+      <section>
+        <div className="mx-auto max-w-6xl px-6 py-20">
+          <div className="grid gap-10 md:grid-cols-2">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">
+                What it changes
+              </p>
+              <h2 className="mt-4 text-3xl font-semibold md:text-4xl">
+                Better decisions when the stakes are high.
+              </h2>
             </div>
-
-            <div
-              style={{
-                marginTop: "18px",
-                fontSize: "16px",
-                lineHeight: 1.8,
-                color: "rgba(255,255,255,0.68)",
-              }}
-            >
-              Every step is recorded.
-              <br />
-              Nothing is overwritten.
-              <br />
-              Every action is provable.
+            <div className="grid gap-4">
+              {[
+                "Reduces ambiguity during incidents and escalations",
+                "Improves retrieval of the full accountability chain",
+                "Supports audit, inspection, and governance review",
+                "Creates a stronger, clearer source of operational truth",
+              ].map((point) => (
+                <div key={point} className="rounded-2xl bg-slate-50 p-5 text-slate-700">
+                  {point}
+                </div>
+              ))}
             </div>
           </div>
-        </Section>
+        </div>
+      </section>
 
-        <Section
-          number="03"
-          title="Governance Outcome"
-          text="Used properly, Responsibility Infrastructure produces demonstrable accountability, reduced operational risk, clear compliance visibility, and defensible records under audit."
-        />
-
-        {/* FOOTER / AUTHORITY */}
-        <section
-          style={{
-            marginTop: "96px",
-            paddingTop: "32px",
-            borderTop: "1px solid rgba(255,255,255,0.08)",
-          }}
-        >
-          <p
-            style={{
-              margin: "0 0 10px",
-              fontSize: "15px",
-              color: "rgba(255,255,255,0.72)",
-            }}
-          >
-            Responsibility Infrastructure is defined and stewarded by La Touche.
-          </p>
-
-          <p
-            style={{
-              margin: "0 0 34px",
-              fontSize: "13px",
-              color: "rgba(255,255,255,0.42)",
-            }}
-          >
-            © {new Date().getFullYear()} La Touche. All rights reserved.
-          </p>
-
-          <a
-            href="https://latouche.ai"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "10px",
-              textDecoration: "none",
-              color: "#ffffff",
-              fontSize: "16px",
-              fontWeight: 600,
-              padding: "14px 18px",
-              borderRadius: "999px",
-              border: "1px solid rgba(255,255,255,0.14)",
-              background: "rgba(255,255,255,0.04)",
-              boxShadow: "0 8px 30px rgba(0,0,0,0.18)",
-            }}
-          >
-            <span>Visit La Touche</span>
-            <span style={{ opacity: 0.72 }}>→</span>
-          </a>
-        </section>
-      </div>
+      <footer className="border-t border-slate-200">
+        <div className="mx-auto max-w-6xl px-6 py-10 text-sm text-slate-500">
+          Responsibility Infrastructure is the system where responsibility is captured, understood,
+          and proven.
+        </div>
+      </footer>
     </main>
-  );
-}
-
-function Section({
-  number,
-  title,
-  text,
-  children,
-}: {
-  number: string;
-  title: string;
-  text: string;
-  children?: React.ReactNode;
-}) {
-  return (
-    <section
-      style={{
-        padding: "34px 0 42px",
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-      }}
-    >
-      <div
-        style={{
-          fontSize: "12px",
-          letterSpacing: "0.18em",
-          textTransform: "uppercase",
-          color: "rgba(255,255,255,0.45)",
-          marginBottom: "14px",
-        }}
-      >
-        {number}
-      </div>
-
-      <h2
-        style={{
-          margin: "0 0 14px",
-          fontSize: "clamp(30px, 4vw, 44px)",
-          lineHeight: 1.05,
-          letterSpacing: "-0.04em",
-          fontWeight: 620,
-          color: "#f8fbff",
-        }}
-      >
-        {title}
-      </h2>
-
-      <p
-        style={{
-          margin: 0,
-          maxWidth: "760px",
-          fontSize: "18px",
-          lineHeight: 1.8,
-          color: "rgba(255,255,255,0.72)",
-        }}
-      >
-        {text}
-      </p>
-
-      {children}
-    </section>
   );
 }
