@@ -1,34 +1,25 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {
-    return res.status(405).end();
+    return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const { name, email, organisation, sector } = req.body;
-
   try {
-    const transporter = nodemailer.createTransport({
-      host: process.env.EMAIL_SERVER_HOST,
-      port: Number(process.env.EMAIL_SERVER_PORT),
-      auth: {
-        user: process.env.EMAIL_SERVER_USER,
-        pass: process.env.EMAIL_SERVER_PASSWORD,
-      },
-    });
+    const { name, email, organisation } = req.body;
 
-    await transporter.sendMail({
-      from: `"La Touche Gatekeeper" <${process.env.EMAIL_SERVER_USER}>`,
-      to: "ops@latouche.ai",
-      subject: "New Executive View Request",
-      text: `
-New request received:
-
-Name: ${name}
-Email: ${email}
-Organisation: ${organisation}
-Sector: ${sector}
+    const data = await resend.emails.send({
+      from: "La Touche <onboarding@resend.dev>",
+      to: ["ops@latouche.ai"],
+      subject: "New Access Request",
+      html: `
+        <h2>New Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Organisation:</strong> ${organisation}</p>
       `,
     });
 
