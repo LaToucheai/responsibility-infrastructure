@@ -1,3 +1,5 @@
+"use client";
+
 export default function GatekeeperPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
@@ -35,54 +37,7 @@ export default function GatekeeperPage() {
             Designed for organisations where ambiguity carries real cost.
           </p>
 
-          <form
-            action="/api/request-access"
-            method="POST"
-            className="mt-10 grid gap-6"
-          >
-            <input
-              type="text"
-              name="name"
-              placeholder="Full name"
-              required
-              className="rounded-xl border border-slate-300 px-4 py-3"
-            />
-
-            <input
-              type="email"
-              name="email"
-              placeholder="Work email"
-              required
-              className="rounded-xl border border-slate-300 px-4 py-3"
-            />
-
-            <input
-              type="text"
-              name="organisation"
-              placeholder="Organisation"
-              required
-              className="rounded-xl border border-slate-300 px-4 py-3"
-            />
-
-            <select
-              name="sector"
-              required
-              className="rounded-xl border border-slate-300 px-4 py-3"
-            >
-              <option value="">Select sector</option>
-              <option>Regulated Care / NHS</option>
-              <option>Compliance / Legal</option>
-              <option>Private Healthcare</option>
-              <option>Other</option>
-            </select>
-
-            <button
-              type="submit"
-              className="rounded-xl bg-slate-900 px-6 py-3 text-white font-medium hover:opacity-90"
-            >
-              Request Access
-            </button>
-          </form>
+          <FormBlock />
         </div>
       </section>
 
@@ -92,5 +47,94 @@ export default function GatekeeperPage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+function FormBlock() {
+  const [submitted, setSubmitted] = React.useState(false);
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const formData = new FormData(e.currentTarget);
+
+    const res = await fetch("/api/request-access", {
+      method: "POST",
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        organisation: formData.get("organisation"),
+        sector: formData.get("sector"),
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+    } else {
+      alert("Something went wrong.");
+    }
+  }
+
+  if (submitted) {
+    return (
+      <div className="mt-10 rounded-xl border border-slate-200 p-6">
+        <p className="text-lg font-medium">
+          Request received.
+        </p>
+        <p className="mt-2 text-slate-600">
+          We’ll review and respond with next steps.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="mt-10 grid gap-6">
+      <input
+        type="text"
+        name="name"
+        placeholder="Full name"
+        required
+        className="rounded-xl border border-slate-300 px-4 py-3"
+      />
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Work email"
+        required
+        className="rounded-xl border border-slate-300 px-4 py-3"
+      />
+
+      <input
+        type="text"
+        name="organisation"
+        placeholder="Organisation"
+        required
+        className="rounded-xl border border-slate-300 px-4 py-3"
+      />
+
+      <select
+        name="sector"
+        required
+        className="rounded-xl border border-slate-300 px-4 py-3"
+      >
+        <option value="">Select sector</option>
+        <option>Regulated Care / NHS</option>
+        <option>Compliance / Legal</option>
+        <option>Private Healthcare</option>
+        <option>Other</option>
+      </select>
+
+      <button
+        type="submit"
+        className="rounded-xl bg-slate-900 px-6 py-3 text-white font-medium hover:opacity-90"
+      >
+        Request Access
+      </button>
+    </form>
   );
 }
