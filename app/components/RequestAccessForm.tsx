@@ -12,7 +12,14 @@ export default function RequestAccessForm() {
 
     await fetch("/api/request-access", {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.get("name"),
+        email: formData.get("email"),
+        organisation: formData.get("organisation"),
+      }),
     })
 
     setSuccess(true)
@@ -24,7 +31,9 @@ export default function RequestAccessForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input name="email" type="email" required />
+      <input name="name" placeholder="Name" required />
+      <input name="email" type="email" placeholder="Email" required />
+      <input name="organisation" placeholder="Organisation" required />
       <button type="submit">Submit</button>
     </form>
   )
